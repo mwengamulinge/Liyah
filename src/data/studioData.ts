@@ -32,7 +32,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     category: "knotless",
     tagline: "Lightweight, pain-free & seamless root finish",
     description: "Our signature tension-free knotless braids look natural directly from the scalp. Ultra-gentle on delicate edges, featherlight feel, and long-lasting elegance.",
-    image: "https://images.unsplash.com/photo-1646617747609-45b466ace9a6?auto=format&fit=crop&w=800&q=80",
+    image: "https://github.com/mwengamulinge/Liyah/blob/main/knotless.png",
     hairIncluded: true,
     startingPrice: 130,
     saleStartingPrice: 95,
