@@ -87,14 +87,14 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices }) => {
 
           {/* Mobile Order 1 / Desktop Order 2: Hero Visual (Centered on mobile, right-aligned & baseline anchored on desktop) */}
           <div className="order-1 lg:order-2 lg:col-span-6 w-full flex items-center justify-center lg:items-end lg:justify-end">
-            <div className="w-full max-w-[340px] sm:max-w-[420px] md:max-w-[480px] lg:max-w-xl xl:max-w-2xl mx-auto lg:mx-0 flex justify-center lg:justify-end items-center lg:items-end">
+            <div className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto lg:mx-0 flex justify-center items-center lg:justify-end lg:items-end text-center">
               
               {!isExhausted ? (
                 <img
                   src={imageCandidates[imageIndex]}
                   alt="Hair by Liyah's Extension - Braids Showcase"
                   referrerPolicy="no-referrer"
-                  className="mx-auto lg:mr-0 block w-auto max-w-full h-auto max-h-[380px] sm:max-h-[460px] lg:max-h-[620px] xl:max-h-[680px] object-contain object-center lg:object-bottom drop-shadow-none"
+                  className="mx-auto lg:mr-0 block w-auto max-w-full h-auto max-h-[360px] sm:max-h-[440px] lg:max-h-[620px] xl:max-h-[680px] object-contain object-center lg:object-bottom drop-shadow-none"
                   onError={handleImageError}
                 />
               ) : (
