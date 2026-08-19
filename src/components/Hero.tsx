@@ -30,11 +30,6 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices }) => {
           {/* Mobile Order 2 / Desktop Order 1: Text & CTAs (6 cols on lg) */}
           <div className="order-2 lg:order-1 lg:col-span-6 space-y-6 text-left pb-1 lg:pb-3">
             
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-zinc-100 text-zinc-800 text-xs font-semibold uppercase tracking-wider rounded-xs">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C05874]" />
-              <span>DeSoto, TX Studio & DFW Mobile</span>
-            </div>
-
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-zinc-900 leading-[1.12] tracking-tight">
               Clean, long-lasting braids in DeSoto, Texas.
             </h1>
