@@ -130,7 +130,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     category: "addons",
     tagline: "Personalized lengths, curl upgrades & VIP mobile service",
     description: "Upgrade your appointment with extra waist/butt/thigh lengths, 100% human raw curl bundles for Boho styles, or book Liyah to travel directly to your location.",
-    image: "https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=800&q=80",
+    image: "/custom.png",
     hairIncluded: false,
     startingPrice: 25,
     priceNote: "Length add-ons ($30-$80) | Raw Curls (+$60) | DFW Travel (Fee Varies)",
@@ -180,13 +180,13 @@ export const GALLERY_LOOKBOOK: GalleryItem[] = [
   },
   {
     id: "g5",
-    title: "Medium Knotless Clean Grid",
-    category: "knotless",
-    style: "Medium Knotless Braids with Dipped Ends",
+    title: "Chic Boho Bob with Curls",
+    category: "bobs",
+    style: "Boho Bob with Rich Chocolate Curls",
     duration: "4.5 hrs",
-    image: "/knotless.png",
-    caption: "Symmetrical square parts with silky tucked ends.",
-    tag: "Classic"
+    image: "/boho-bob.png",
+    caption: "Voluminous bouncing curls woven with lightweight bob braids.",
+    tag: "Trending"
   },
   {
     id: "g6",
@@ -197,6 +197,16 @@ export const GALLERY_LOOKBOOK: GalleryItem[] = [
     image: "/kids.png",
     caption: "Gentle on young scalps with secure beaded accessories.",
     tag: "Kids Care"
+  },
+  {
+    id: "g7",
+    title: "VIP Custom Length & Styling",
+    category: "addons",
+    style: "Extended Butt-Length with Raw Curly Curls",
+    duration: "Custom",
+    image: "/custom.png",
+    caption: "High-end customized extensions, luxury bundles, and mobile on-site appointments.",
+    tag: "VIP Custom"
   }
 ];
 
