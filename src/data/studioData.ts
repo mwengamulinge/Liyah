@@ -301,3 +301,4 @@ export const STUDIO_POLICIES = [
     rule: "Slots Will Fill Fast - Secure Your Spot Today!"
   }
 ];
+
