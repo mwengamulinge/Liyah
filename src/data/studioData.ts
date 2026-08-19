@@ -164,7 +164,7 @@ export const GALLERY_LOOKBOOK: GalleryItem[] = [
     category: "knotless",
     style: "Small Knotless Braids in Jet Black 1B",
     duration: "7 hrs",
-    image: "https://images.unsplash.com/photo-1646617747609-45b466ace9a6?auto=format&fit=crop&w=1000&q=80",
+    image: "/knotless.png",
     caption: "Over 8 weeks of durability with flexible root movement right out of the chair.",
     tag: "Bestseller"
   },
