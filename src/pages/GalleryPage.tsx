@@ -97,27 +97,36 @@ export const GalleryPage: React.FC = () => {
                 onClick={() => setSelectedImage(item.image)}
                 className="group relative bg-white border border-zinc-200 rounded-xs overflow-hidden cursor-pointer hover:border-zinc-400 transition-colors shadow-xs"
               >
-                <div className="aspect-[4/5] bg-zinc-100 overflow-hidden relative">
+                <div className="aspect-[4/5] bg-[#FAF8F5] overflow-hidden relative flex items-center justify-center p-3">
                   <img
                     src={item.image}
                     alt={item.title}
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-contain object-center transition-transform duration-500 group-hover:scale-105"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       if (!target.src.includes('raw.githubusercontent.com')) {
                         if (item.category === 'knotless') target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/knotless.png';
                         else if (item.category === 'boho') target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/boho.png';
-                        else if (item.category === 'bobs') target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/knotless%20bob.png';
+                        else if (item.id === 'g4') target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/knotless-bob.png';
+                        else if (item.id === 'g5' || item.category === 'bobs') target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/boho-bob.png';
                         else if (item.category === 'stitch') target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/scalp.png';
                         else if (item.category === 'kids') target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/kids.png';
-                        else target.src = 'https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&w=800&q=80';
+                        else if (item.id === 'g7' || item.category === 'addons') target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/custom.png';
+                        else target.src = 'https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=800&q=80';
                       } else {
-                        target.src = 'https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&w=800&q=80';
+                        // Individual distinct backups
+                        if (item.category === 'knotless') target.src = 'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?auto=format&fit=crop&w=800&q=80';
+                        else if (item.category === 'boho') target.src = 'https://images.unsplash.com/photo-1584297091622-af8e5fd184c8?auto=format&fit=crop&w=800&q=80';
+                        else if (item.id === 'g4') target.src = 'https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=800&q=80';
+                        else if (item.category === 'bobs') target.src = 'https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&w=800&q=80';
+                        else if (item.category === 'stitch') target.src = 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80';
+                        else if (item.category === 'kids') target.src = 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=800&q=80';
+                        else target.src = 'https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=800&q=80';
                       }
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-75 group-hover:opacity-90 transition-opacity pointer-events-none" />
 
                   {/* Like Counter */}
                   <button
