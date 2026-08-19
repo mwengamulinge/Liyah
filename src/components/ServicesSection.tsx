@@ -91,8 +91,14 @@ export const ServicesSection: React.FC = () => {
                       className="w-full h-full object-cover object-center"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        if (service.id === 'knotless-braids' && !target.src.includes('raw.githubusercontent.com')) {
-                          target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/knotless.png';
+                        if (!target.src.includes('raw.githubusercontent.com')) {
+                          if (service.id === 'knotless-braids') target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/knotless.png';
+                          else if (service.id === 'boho-knotless') target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/boho.png';
+                          else if (service.id === 'knotless-bobs') target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/knotless%20bob.png';
+                          else if (service.id === 'boho-bobs') target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/boho%20bob.png';
+                          else if (service.id === 'scalp-stitch-braids') target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/scalp.png';
+                          else if (service.id === 'kids-styles') target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/kids.png';
+                          else target.src = 'https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&w=800&q=80';
                         } else {
                           target.src = 'https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&w=800&q=80';
                         }
