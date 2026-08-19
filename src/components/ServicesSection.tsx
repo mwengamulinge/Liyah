@@ -83,24 +83,32 @@ export const ServicesSection: React.FC = () => {
               >
                 <div>
                   {/* Service Image */}
-                  <div className="relative aspect-[16/10] overflow-hidden bg-zinc-100">
+                  <div className="relative aspect-[16/11] overflow-hidden bg-[#FAF8F5] flex items-center justify-center p-2 border-b border-zinc-100">
                     <img
                       src={service.image}
                       alt={service.name}
                       referrerPolicy="no-referrer"
-                      className="w-full h-full object-cover object-center"
+                      className="w-full h-full object-contain object-center transition-transform duration-300 hover:scale-105"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         if (!target.src.includes('raw.githubusercontent.com')) {
                           if (service.id === 'knotless-braids') target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/knotless.png';
                           else if (service.id === 'boho-knotless') target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/boho.png';
-                          else if (service.id === 'knotless-bobs') target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/knotless%20bob.png';
-                          else if (service.id === 'boho-bobs') target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/boho%20bob.png';
+                          else if (service.id === 'knotless-bobs') target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/knotless-bob.png';
+                          else if (service.id === 'boho-bobs') target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/boho-bob.png';
                           else if (service.id === 'scalp-stitch-braids') target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/scalp.png';
                           else if (service.id === 'kids-styles') target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/kids.png';
-                          else target.src = 'https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&w=800&q=80';
+                          else if (service.id === 'add-ons-travel') target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/custom.png';
+                          else target.src = 'https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=800&q=80';
                         } else {
-                          target.src = 'https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&w=800&q=80';
+                          // Individual distinct backups
+                          if (service.id === 'knotless-braids') target.src = 'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?auto=format&fit=crop&w=800&q=80';
+                          else if (service.id === 'boho-knotless') target.src = 'https://images.unsplash.com/photo-1584297091622-af8e5fd184c8?auto=format&fit=crop&w=800&q=80';
+                          else if (service.id === 'knotless-bobs') target.src = 'https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=800&q=80';
+                          else if (service.id === 'boho-bobs') target.src = 'https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&w=800&q=80';
+                          else if (service.id === 'scalp-stitch-braids') target.src = 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80';
+                          else if (service.id === 'kids-styles') target.src = 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=800&q=80';
+                          else target.src = 'https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=800&q=80';
                         }
                       }}
                     />
