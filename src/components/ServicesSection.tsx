@@ -88,9 +88,14 @@ export const ServicesSection: React.FC = () => {
                       src={service.image}
                       alt={service.name}
                       referrerPolicy="no-referrer"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-center"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&w=800&q=80';
+                        const target = e.target as HTMLImageElement;
+                        if (service.id === 'knotless-braids' && !target.src.includes('raw.githubusercontent.com')) {
+                          target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/knotless.png';
+                        } else {
+                          target.src = 'https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&w=800&q=80';
+                        }
                       }}
                     />
                     {service.badge && (
