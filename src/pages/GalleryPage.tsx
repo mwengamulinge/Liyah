@@ -104,7 +104,12 @@ export const GalleryPage: React.FC = () => {
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     onError={(e) => {
-                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&w=800&q=80';
+                      const target = e.target as HTMLImageElement;
+                      if (item.category === 'knotless' && !target.src.includes('raw.githubusercontent.com')) {
+                        target.src = 'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/knotless.png';
+                      } else {
+                        target.src = 'https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&w=800&q=80';
+                      }
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
