@@ -7,15 +7,28 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onExploreServices }) => {
-  const [imageError, setImageError] = useState(false);
+  // Try local /hero-image.png first, then GitHub raw URL, then fallback
+  const [imageIndex, setImageIndex] = useState(0);
+
+  const imageCandidates = [
+    '/hero-image.png',
+    'https://raw.githubusercontent.com/mwengamulinge/Liyah/main/hero-image.png',
+    'https://github.com/mwengamulinge/Liyah/raw/main/hero-image.png'
+  ];
+
+  const handleImageError = () => {
+    setImageIndex((prev) => prev + 1);
+  };
+
+  const isExhausted = imageIndex >= imageCandidates.length;
 
   return (
     <section className="relative pt-6 pb-14 lg:pt-12 lg:pb-20 bg-[#FCFBFA] border-b border-zinc-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Left Column: Clear, Modern Copy & High-Intent CTA (7 cols) */}
-          <div className="lg:col-span-7 space-y-6 text-left">
+          {/* Mobile Order 2 / Desktop Order 1: Text & CTAs (7 cols) */}
+          <div className="order-2 lg:order-1 lg:col-span-7 space-y-6 text-left">
             
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-zinc-100 text-zinc-800 text-xs font-semibold uppercase tracking-wider rounded-xs">
               <span className="w-1.5 h-1.5 rounded-full bg-[#C05874]" />
@@ -72,17 +85,17 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices }) => {
 
           </div>
 
-          {/* Right Column: Free-Floating Hero Visual (No frame, no border, no background box) */}
-          <div className="lg:col-span-5 flex items-center justify-center">
-            <div className="relative w-full max-w-lg lg:max-w-none">
+          {/* Mobile Order 1 / Desktop Order 2: Hero Visual (5 cols) */}
+          <div className="order-1 lg:order-2 lg:col-span-5 flex items-center justify-center">
+            <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-none">
               
-              {!imageError ? (
+              {!isExhausted ? (
                 <img
-                  src="/hero-image.png"
+                  src={imageCandidates[imageIndex]}
                   alt="Hair by Liyah's Extension - Braids Showcase"
                   referrerPolicy="no-referrer"
-                  className="w-full h-auto max-h-[580px] object-contain object-center drop-shadow-none"
-                  onError={() => setImageError(true)}
+                  className="w-full h-auto max-h-[480px] lg:max-h-[580px] object-contain object-center drop-shadow-none"
+                  onError={handleImageError}
                 />
               ) : (
                 /* Fallback Cutout / Seamless Showcase without any outer frame */
