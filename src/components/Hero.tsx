@@ -23,12 +23,12 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices }) => {
   const isExhausted = imageIndex >= imageCandidates.length;
 
   return (
-    <section className="relative pt-6 pb-14 lg:pt-12 lg:pb-20 bg-[#FCFBFA] border-b border-zinc-100 overflow-hidden">
+    <section className="relative pt-4 pb-10 lg:pt-10 lg:pb-12 bg-[#FCFBFA] border-b border-zinc-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-end">
           
-          {/* Mobile Order 2 / Desktop Order 1: Text & CTAs (7 cols) */}
-          <div className="order-2 lg:order-1 lg:col-span-7 space-y-6 text-left">
+          {/* Mobile Order 2 / Desktop Order 1: Text & CTAs (6 cols on lg) */}
+          <div className="order-2 lg:order-1 lg:col-span-6 space-y-6 text-left pb-1 lg:pb-3">
             
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-zinc-100 text-zinc-800 text-xs font-semibold uppercase tracking-wider rounded-xs">
               <span className="w-1.5 h-1.5 rounded-full bg-[#C05874]" />
@@ -39,7 +39,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices }) => {
               Clean, long-lasting braids in DeSoto, Texas.
             </h1>
 
-            <p className="text-base sm:text-lg text-zinc-600 max-w-2xl leading-relaxed">
+            <p className="text-base sm:text-lg text-zinc-600 max-w-xl leading-relaxed">
               We specialize in tension-free knotless braids, boho curls, sleek bobs, and sharp stitch parts. Enjoy gentle edge care, hair included on qualifying styles, and appointments starting from 6:00 AM.
             </p>
 
@@ -85,21 +85,21 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices }) => {
 
           </div>
 
-          {/* Mobile Order 1 / Desktop Order 2: Hero Visual (5 cols) */}
-          <div className="order-1 lg:order-2 lg:col-span-5 flex items-center justify-center">
-            <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-none">
+          {/* Mobile Order 1 / Desktop Order 2: Hero Visual (Centered on mobile, right-aligned & baseline anchored on desktop) */}
+          <div className="order-1 lg:order-2 lg:col-span-6 w-full flex items-center justify-center lg:items-end lg:justify-end">
+            <div className="w-full max-w-[340px] sm:max-w-[420px] md:max-w-[480px] lg:max-w-xl xl:max-w-2xl mx-auto lg:mx-0 flex justify-center lg:justify-end items-center lg:items-end">
               
               {!isExhausted ? (
                 <img
                   src={imageCandidates[imageIndex]}
                   alt="Hair by Liyah's Extension - Braids Showcase"
                   referrerPolicy="no-referrer"
-                  className="w-full h-auto max-h-[480px] lg:max-h-[580px] object-contain object-center drop-shadow-none"
+                  className="mx-auto lg:mr-0 block w-auto max-w-full h-auto max-h-[380px] sm:max-h-[460px] lg:max-h-[620px] xl:max-h-[680px] object-contain object-center lg:object-bottom drop-shadow-none"
                   onError={handleImageError}
                 />
               ) : (
-                /* Fallback Cutout / Seamless Showcase without any outer frame */
-                <div className="relative w-full aspect-[4/5] flex items-center justify-center">
+                /* Fallback Cutout / Seamless Showcase */
+                <div className="relative w-full aspect-[4/5] max-h-[560px] mx-auto flex items-center justify-center">
                   <img
                     src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80"
                     alt="Hair by Liyah's Extension - Braiding Stylist"
