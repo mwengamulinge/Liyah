@@ -1,0 +1,6 @@
+{
+  "name": "Hair by Liyah's Extension",
+  "description": "Luxury hair braiding, knotless braids, boho bobs, and custom styling studio in DeSoto, TX with 72-hour flash sale pricing and online booking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
