@@ -28,7 +28,7 @@ export interface ServiceItem {
 export interface GalleryItem {
   id: string;
   title: string;
-  category: 'knotless' | 'boho' | 'bobs' | 'stitch' | 'kids';
+  category: 'knotless' | 'boho' | 'bobs' | 'stitch' | 'kids' | 'addons';
   style: string;
   duration: string;
   image: string;
